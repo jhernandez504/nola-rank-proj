@@ -8,7 +8,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-red-800 text-white px-4 py-3">
+    <nav className="bg-red-800 text-white px-5 py-3 shadow-sm">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo or site name */}
         <div className="text-xl font-bold">NolaRank</div>
