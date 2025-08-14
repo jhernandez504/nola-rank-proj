@@ -1,8 +1,14 @@
 export default function Home() {
   return (
   <main className="min-h-screen bg-gray-100 dark:bg-gray-900 px-4 py-10">
-    <h1 className="max-w-6xl mx-auto text-center">NEW ORLEANS RANK AND FILE</h1>
-    <div className="max-w-6xl mx-auto text-center py-6">
+    <h1 className="max-w-6xl mx-auto font-extrabold text-center">NEW ORLEANS RANK AND FILE</h1>
+    <div className="max-w-6xl mx-auto text-center py-6 ">
+      <img
+        src="/images/workers/workers2.jpeg"
+        alt="Rank and File Workers"
+        className="rounded-lg shadow-lg mx-auto"
+        style={{ width: '50%', height: '50%' }}
+      />
       <p>
         We’ve seen historic strikes recently across New Orleans, from AT&T workers, to UMC nurses, to ILA dockworkers.
       </p>

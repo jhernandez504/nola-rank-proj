@@ -8,10 +8,19 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-red-800 text-white px-5 py-3 shadow-sm">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
+    <nav className="bg-red-800 text-white px-1 py-2">
+      <div className="max-w-8xl mx-auto flex justify-between items-center">
         {/* Logo or site name */}
-        <div className="text-xl font-bold">NolaRank</div>
+        <div className="text-xl font-bold">
+          <Link href="/" className="hover:underline hover:text-yellow-300">
+          <img
+            src="/images/workers/logo.jpeg"
+            alt="Nurses Strike Rally"
+            className="rounded-lg shadow-lg"
+            style={{ width: '60px', height: '60px' }}
+          />
+          </Link>
+        </div>
 
         {/* Hamburger icon (mobile only) */}
         <div className="md:hidden">
