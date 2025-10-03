@@ -16,7 +16,7 @@ export default function Donate() {
         Your donation helps us continue our important work in the community. Thank you for your generosity!
       </p>
 
-      <div className="w-full max-w-2xl">
+      <div className="w-full max-w-4xl">
         <iframe
           src="https://donorbox.org/embed/YOUR_CAMPAIGN_ID_HERE"
           name="donorbox"

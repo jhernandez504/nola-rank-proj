@@ -5,7 +5,7 @@ export default function Resources() {
   };
 
   return (
-    <main className="max-w-4xl mx-auto px-4 py-8">
+    <main className="w-screen mx-auto px-8 py-8">
       <h1 className="text-4xl font-bold text-center mb-6">Resources</h1>
       <section className="space-y-6">
         <div>

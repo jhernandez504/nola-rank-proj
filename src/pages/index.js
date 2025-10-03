@@ -1,20 +1,39 @@
 export default function Home() {
   return (
-  <main className="min-h-screen bg-gray-100 dark:bg-gray-900 px-4 py-10">
-    <h1 className="max-w-6xl mx-auto font-extrabold text-center">NEW ORLEANS RANK AND FILE</h1>
-    <div className="max-w-6xl mx-auto text-center py-6 ">
-      <img
-        src="/images/workers/workers2.jpeg"
-        alt="Rank and File Workers"
-        className="rounded-lg shadow-lg mx-auto"
-        style={{ width: '50%', height: '50%' }}
-      />
-      <p>
-        We’ve seen historic strikes recently across New Orleans, from AT&T workers, to UMC nurses, to ILA dockworkers.
-      </p>
-      <p>
-        We are organizing strike support so that more workers can take to the streets in 2025!
-      </p>
+  <main className="min-h-screen w-screen bg-gray-100 dark:bg-gray-900 px-4 py-10">
+    <div className="w-screen text-center py-6 ">
+      <section className="flex flex-col md:flex-row items-center md:items-start max-w-6xl mx-auto gap-8">
+        {/* Text Section */}
+        <div className="flex-1 space-y-4 pt-16">
+          <h1 className="text-3xl font-extrabold">
+            What is the New Orleans Rank & File Project?
+          </h1>
+          <p className="pt-5 mx-10">
+            We are a worker solidarity and education organization rooted in our local
+            labor movement.
+          </p>
+          <p className="mx-10">
+            We are linking unions members directly with each other, across boundaries
+            of union affiliation and industry.
+          </p>
+          <p className="mx-10">
+            We are training each other to be organizers in order to build a militant
+            labor movement.
+          </p>
+
+          <a href="/join" className="hover:underline hover:text-yellow-300 bg-red-800 rounded-sm py-2 px-5 text-white"> Join Us!</a>
+        </div>
+
+        {/* Image Section */}
+        <div className="flex-1 flex justify-center">
+          <img
+            src="images/nurses/home1.png"
+            alt="Rank and File Workers on Strike"
+            className="rounded-lg shadow-lg w-full max-w-md scale-95"
+          />
+        </div>
+      </section>
+
     </div>
     <div className="max-w-6xl mx-auto text-center justify-between">
       {/* Contact Button */}

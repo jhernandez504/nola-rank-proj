@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function JoinPage() {
   return (
-    <div className="max-w-3xl mx-auto px-4 py-10 space-y-12">
+    <div className="w-screen mx-auto px-8 py-10 space-y-12">
       {/* Join */}
       <section className="text-center">
         <h1 className="text-4xl font-bold mb-4">Join</h1>

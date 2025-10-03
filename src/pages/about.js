@@ -7,7 +7,7 @@ export default function About() {
 
   return (
     <main className="min-h-screen bg-gray-100 dark:bg-gray-900 px-4 py-12">
-      <section className="max-w-5xl mx-auto">
+      <section className="w-screen p-3 mx-auto">
         <h1 className="text-4xl font-bold text-center text-gray-800 dark:text-white mb-8">
           About Us
         </h1>

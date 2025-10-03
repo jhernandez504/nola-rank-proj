@@ -2,10 +2,10 @@
 
 export default function Campaigns() {
   return (
-    <main className="min-h-screen bg-gray-100 dark:bg-gray-900 px-4 py-10">
-      <div className="max-w-3xl mx-auto space-y-12 text-gray-900 dark:text-white">
+    <main className="min-h-screen m-screen bg-gray-100 dark:bg-gray-900 px-4 py-10">
+      <div className="w-screen mx-auto space-y-12 text-gray-900 dark:text-white">
         <h1 className="text-4xl font-bold text-center">Our Campaigns</h1>
-        <p className="text-lg">
+        <p className="text-lg text-center">
           We are actively organizing and supporting campaigns that directly improve the lives of New Orleanians.
         </p>
 
@@ -18,11 +18,14 @@ export default function Campaigns() {
           </p>
 
           {/* Campaign Image */}
-          <img
-            src="/images/nurses/nursestrike1.jpg"
-            alt="Nurses Strike Rally"
-            className="rounded-lg shadow-lg"
-          />
+          <div className="flex justify-center mb-4">
+            <img
+              src="/images/nurses/nursestrike1.jpg"
+              alt="Nurses Strike Rally"
+              className="rounded-lg shadow-lg"
+              style={{ width: '40%', height: 'auto' }}
+            />
+          </div>
 
           {/* Centered Button */}
           <div className="flex justify-center">
@@ -50,10 +53,11 @@ export default function Campaigns() {
             src="/images/workers/workers1.jpeg"
             alt="Workers' Rights Rally"
             className="rounded-lg shadow-lg"
+            style={{ width: '40%', height: 'auto', display: 'block', margin: '0 auto' }}
           />
 
           {/* Centered Button */}
-          <div className="flex justify-center">
+          <div className="flex justify-center pt-3">
             <a
               href="/heat-standards"
               className="inline-block px-4 py-2 bg-yellow-500 text-black rounded hover:bg-yellow-600 transition"

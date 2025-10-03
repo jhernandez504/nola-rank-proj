@@ -2,27 +2,41 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { FaUserShield } from 'react-icons/fa'; // Admin login icon
+import { usePathname } from 'next/navigation';
+import { FaUserShield } from 'react-icons/fa';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname(); // Get current path
+
+  const links = [
+    { href: '/', label: 'Home' },
+    { href: '/about', label: 'About' },
+    { href: '/join', label: 'Join' },
+    { href: '/donate', label: 'Donate' },
+    { href: '/resources', label: 'Resources' },
+    { href: '/campaigns', label: 'Campaigns' },
+    { href: '/contact', label: 'Contact' },
+    { href: '/admin', label: 'Admin', icon: <FaUserShield className="w-5 h-5" /> },
+  ];
 
   return (
     <nav className="bg-red-800 text-white px-1 py-2">
       <div className="max-w-8xl mx-auto flex justify-between items-center">
-        {/* Logo or site name */}
+        {/* Logo */}
         <div className="text-xl font-bold">
           <Link href="/" className="hover:underline hover:text-yellow-300">
-          <img
-            src="/images/workers/logo.jpeg"
-            alt="Nurses Strike Rally"
-            className="rounded-lg shadow-lg"
-            style={{ width: '60px', height: '60px' }}
-          />
+            <img
+              src="/images/workers/logo.jpeg"
+              alt="Logo"
+              className="rounded-lg shadow-lg"
+              style={{ width: '60px', height: '60px' }}
+            />
           </Link>
         </div>
+        <p className="text-white pl-4 text-xl">New Orleans Rank & File Project</p>
 
-        {/* Hamburger icon (mobile only) */}
+        {/* Hamburger (mobile) */}
         <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -54,42 +68,40 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Nav links (desktop) */}
-        <ul className="hidden md:flex flex-row space-x-6 items-center ml-auto">
-          <li><Link href="/" className="hover:underline hover:text-yellow-300">Home</Link></li>
-          <li><Link href="/about" className="hover:underline hover:text-yellow-300">About</Link></li>
-          <li><Link href="/join" className="hover:underline hover:text-yellow-300">Join</Link></li>
-          <li><Link href="/donate" className="hover:underline hover:text-yellow-300">Donate</Link></li>
-          <li><Link href="/resources" className="hover:underline hover:text-yellow-300">Resources</Link></li>
-          <li><Link href="/campaigns" className="hover:underline hover:text-yellow-300">Campaigns</Link></li>
-          <li><Link href="/contact" className="hover:underline hover:text-yellow-300">Contact</Link></li>
-          <li>
-            <Link href="/admin" title="Admin Login">
-              <FaUserShield className="w-5 h-5 hover:text-yellow-300 cursor-pointer" />
-            </Link>
-          </li>
+        {/* Desktop links */}
+        <ul className="hidden md:flex flex-row space-x-6 items-center ml-auto text-lg">
+          {links.map(({ href, label, icon }) => (
+            <li key={href}>
+              <Link
+                href={href}
+                className={`hover:underline hover:text-yellow-300 ${
+                  pathname === href ? 'text-yellow-300 font-bold' : ''
+                }`}
+              >
+                {icon ? icon : label}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
 
-      {/* Nav links (mobile) */}
+      {/* Mobile links */}
       {isOpen && (
         <ul className="md:hidden mt-2 space-y-2">
-          <li><Link href="/" className="block px-2 py-1 hover:underline hover:text-yellow-300">Home</Link></li>
-          <li><Link href="/about" className="block px-2 py-1 hover:underline hover:text-yellow-300">About</Link></li>
-          <li><Link href="/join" className="block px-2 py-1 hover:underline hover:text-yellow-300">Join</Link></li>
-          <li><Link href="/donate" className="block px-2 py-1 hover:underline hover:text-yellow-300">Donate</Link></li>
-          <li><Link href="/resources" className="block px-2 py-1 hover:underline hover:text-yellow-300">Resources</Link></li>
-          <li><Link href="/campaigns" className="block px-2 py-1 hover:underline hover:text-yellow-300">Campaigns</Link></li>
-          <li><Link href="/contact" className="block px-2 py-1 hover:underline hover:text-yellow-300">Contact</Link></li>
-          <li>
-            <Link href="/admin" title="Admin Login">
-              <FaUserShield className="w-5 h-5 hover:text-yellow-300 cursor-pointer" />
-            </Link>
-          </li>
+          {links.map(({ href, label, icon }) => (
+            <li key={href}>
+              <Link
+                href={href}
+                className={`block px-2 py-1 hover:underline hover:text-yellow-300 ${
+                  pathname === href ? 'text-yellow-300 font-bold' : ''
+                }`}
+              >
+                {icon ? icon : label}
+              </Link>
+            </li>
+          ))}
         </ul>
       )}
     </nav>
   );
 }
-
-
